@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class Sudoku
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws FileNotFoundException
     {
-        Board b = new TestBoard(4);
+        //Board b = new Board(getInputFromFile("moreTestBoards/1.txt"));
+        Board b = new Board(getInputFromTyping());
         System.out.print("\n" + b);
         b.solve();
         System.out.println("\n-----------------------------\n-----------------------------");
@@ -16,26 +17,24 @@ public class Sudoku
     public static int[][] getInputFromTyping()
     {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter board:");
         int[][] board = new int[9][9];
-        for (int row = 0; row < 9; row++)
+        System.out.println("Please enter board:");
+        for (int r = 0; r < 9; r++)
         {
-            try
+            String line = scanner.nextLine();
+            for (int c = 0; c < 9; c++)
             {
-                String[] temp = scanner.nextLine().split(",");
-                for (int col = 0; col < 9; col++)
-                {
-                    if (temp[col].equals("") || temp[col].equals(" "))
-                    { board[row][col] = 0; } //filling holes
-                    else { board[row][col] = Integer.valueOf(temp[col].trim()); }
-                }
+                if (line.length() == 0)
+                { board[r][c] = 0; continue; }
+                char n = line.charAt(0);
+                line = line.substring(1).trim();
+                if (n == ' ')
+                { board[r][c] = 0; }
+                else { board[r][c] = Integer.valueOf("" + n); }
             }
-            catch (Exception e)
-            { throw e; }
         }
         return board;
     }
-
     public static int[][] getInputFromFile(String fileName) throws FileNotFoundException
     {
         Scanner inputFile = new Scanner(new File(fileName));
@@ -45,7 +44,7 @@ public class Sudoku
             String line = inputFile.nextLine().trim();
             for (int c = 0; c < 9; c++)
             {
-                board[r][c] = Integer.valueOf(line.charAt(0));
+                board[r][c] = Integer.valueOf("" + line.charAt(0));
                 line = line.substring(1).trim();
             }
         }
