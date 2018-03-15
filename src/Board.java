@@ -89,7 +89,7 @@ public class Board
 
     public void solve()
     {
-        while(!isSolved())
+        while(!isSolved()) //could also use while(true), which would reduce time for each loop but require running the loop an extra time
         {
             System.out.println("aaa");
             boolean changed = false;
