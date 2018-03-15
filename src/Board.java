@@ -91,7 +91,6 @@ public class Board
     {
         while(!isSolved()) //could also use while(true), which would reduce time for each loop but require running the loop an extra time
         {
-            System.out.println("aaa");
             boolean changed = false;
             //try simple solve where you look for single possibilities first
             for(Cell[] r : myBoard)

@@ -6,12 +6,24 @@ public class Sudoku
 {
     public static void main(String[] args) throws FileNotFoundException
     {
-        //Board b = new Board(getInputFromFile("moreTestBoards/1.txt"));
-        Board b = new Board(getInputFromTyping());
+        Board b = new TestBoard(4);
         System.out.print("\n" + b);
         b.solve();
         System.out.println("\n-----------------------------\n-----------------------------");
         System.out.print("\n" + b);
+
+        //test code
+        /*int count = 0;
+        for (int i = 1; i <= 50; i++)
+        {
+            Board b = new Board(getInputFromFile("moreTestBoards/" + i + ".txt"));
+            //System.out.print("\n" + b);
+            //System.out.println("\n-----------------------------\n-----------------------------");
+            b.solve();
+            if (b.isSolved())
+            { count++; }
+        }
+        System.out.println("\n" + count + "/50");*/
     }
 
     public static int[][] getInputFromTyping()
