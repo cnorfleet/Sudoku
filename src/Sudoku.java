@@ -1,3 +1,7 @@
+import java.io.*;
+import java.nio.file.FileSystemException;
+import java.util.Scanner;
+
 public class Sudoku
 {
     public static void main(String[] args)
@@ -29,6 +33,23 @@ public class Sudoku
             catch (Exception e)
             { throw e; }
         }
+        return board;
+    }
+
+    public static int[][] getInputFromFile(String fileName) throws FileNotFoundException
+    {
+        Scanner inputFile = new Scanner(new File(fileName));
+        int[][] board = new int[9][9];
+        for (int r = 0; r < 9; r++)
+        {
+            String line = inputFile.nextLine().trim();
+            for (int c = 0; c < 9; c++)
+            {
+                board[r][c] = Integer.valueOf(line.charAt(0));
+                line = line.substring(1).trim();
+            }
+        }
+        inputFile.close();
         return board;
     }
 }
