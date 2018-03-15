@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Cell
@@ -25,6 +26,7 @@ public class Cell
         row = new ArrayList<>();
         col = new ArrayList<>();
         box = new ArrayList<>();
+        regions = new ArrayList<>();
         regions.add(row);
         regions.add(col);
         regions.add(box);
@@ -47,6 +49,11 @@ public class Cell
     }
     public void removePossibility(int i)
     { possibilities.remove(new Integer(i)); }
+    public void clearPossibilities()
+    {
+        while(possibilities.size() > 0)
+        { possibilities.remove(0); }
+    }
 
     public int getVal()
     { return myVal; }
@@ -59,20 +66,38 @@ public class Cell
     { connect(c, false, where); }
     public void connect(Cell c, boolean unidirectional, char where)
     {
-        neighbors.add(c);
+        if (where != 'x')
+        { neighbors.add(c); }
+        //r is row, c is col, b is box, x is only box (already added to row/col)
         switch(where)
         {
             case 'r': row.add(c); break;
             case 'c': col.add(c); break;
-            case 'b': col.add(c); break;
+            case 'b': case 'x': box.add(c); break;
         }
         if (!unidirectional)
         { c.connect(this, true, where); }
     }
 
+    public boolean hasPossibility(int i)
+    {
+        for(int p : possibilities)
+        { if (i == p) { return true; } }
+        return false;
+    }
+
     public void debugPrintNeighbors()
     {
         for(Cell c : neighbors)
+        { System.out.print(c + " "); }
+        System.out.println();
+        for(Cell c : row)
+        { System.out.print(c + " "); }
+        System.out.println();
+        for(Cell c : col)
+        { System.out.print(c + " "); }
+        System.out.println();
+        for(Cell c : box)
         { System.out.print(c + " "); }
         System.out.println();
     }
@@ -94,5 +119,24 @@ public class Cell
         myVal = possibilities.remove(0);
         updateNeighborsPossibilities();
         return true;
+    }
+
+    public boolean onlyOptionSolve()
+    {
+        for(int p : possibilities)
+        {
+            for(ArrayList<Cell> region : regions)
+            {
+                boolean found = false;
+                for(Cell c : region)
+                {
+                    if(c.hasPossibility(p))
+                    { found = true; break; }
+                }
+                if(!found)
+                { myVal = p; updateNeighborsPossibilities(); clearPossibilities(); return true; }
+            }
+        }
+        return false;
     }
 }

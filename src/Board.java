@@ -24,15 +24,17 @@ public class Board
                 for(int r2 = 0; r2 < r; r2++)
                 { myBoard[r][c].connect(myBoard[r2][c], 'c'); }
                 //connect with box - note that row and col are already connected
-
                 for(int r2 = (r/3)*3; r2 < (r/3)*3+3; r2++)
                 {
-                    if (r2 == r) { continue; }
                     for(int c2 = (c/3)*3; c2 < (c/3)*3+3; c2++)
                     {
-                        if (c2 == c) { continue; }
-                        if(myBoard[r2][c2] != null)
-                        { myBoard[r][c].connect(myBoard[r2][c2], 'b'); }
+                        if(myBoard[r2][c2] != null && !(r2 == r && c2 == c))
+                        {
+                            if(r2 == r || c2 == c)
+                            { myBoard[r][c].connect(myBoard[r2][c2], 'x'); }
+                            else
+                            { myBoard[r][c].connect(myBoard[r2][c2], 'b'); }
+                        }
                     }
                 }
             }
