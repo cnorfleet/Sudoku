@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class Board
 {
@@ -239,8 +240,10 @@ public class Board
                         { allPos.add(p); }
                     }
                 }
-                //if we only have exactly the right number of possibilities, then only these squares can be the possibilities
-                if(allPos.size() <= permutation.size())
+                //if we have exactly the right number of possibilities, then only these squares can be the possibilities
+                if(allPos.size() < permutation.size())
+                { throw new InputMismatchException("This Board is Invalid"); }
+                if(allPos.size() == permutation.size())
                 {
                     //figure out what other squares we have in this region
                     ArrayList<Cell> toRemoveFrom = new ArrayList<>();
@@ -312,7 +315,9 @@ public class Board
                     matching.add(c);
                 }
                 //if we only have exactly the right number of squares, then they must all be in the permutation
-                if(matching.size() <= permutation.size())
+                if(matching.size() < permutation.size())
+                { throw new InputMismatchException("This Board is Invalid"); }
+                if(matching.size() == permutation.size())
                 {
                     //figure out what other things the squares must not be
                     ArrayList<Integer> toRemove = new ArrayList<>();

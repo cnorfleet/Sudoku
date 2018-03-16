@@ -16,11 +16,15 @@ public class Sudoku
         for (int i = 1; i <= 50; i++)
         {
             Board b = new Board(getInputFromFile("moreTestBoards/" + i + ".txt"));
-            //System.out.print("\n" + b);
-            //System.out.println("\n-----------------------------\n-----------------------------");
             b.solve();
             if (b.isSolved())
             { count++; }
+            else
+            {
+                System.out.println(i);
+                System.out.print("\n" + b);
+                System.out.println("\n-----------------------------\n-----------------------------");
+            }
         }
         System.out.println("\n" + count + "/50"); //*/
     }
