@@ -389,6 +389,6 @@ public class Board
                 return;
             }
         }
-        throw new InputMismatchException("This Board is Not Invalid");
+        throw new InputMismatchException("This Board is Invalid");
     }
 }
