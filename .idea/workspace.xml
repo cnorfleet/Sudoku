@@ -2,8 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="608a7456-3f35-4070-afca-f17d1e2db3b0" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sudoku/TestBoard.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/10.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/11.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/12.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/13.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/14.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/15.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/16.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/17.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/18.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/19.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/20.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/21.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/22.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/23.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/24.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/25.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/26.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/27.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/28.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/29.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/3.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/30.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/31.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/32.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/33.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/34.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/35.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/36.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/37.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/38.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/39.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/4.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/40.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/41.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/42.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/43.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/44.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/45.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/46.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/47.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/48.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/49.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/5.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/50.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/6.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/7.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/8.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Sudoku/9.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sudoku/Board.class" afterPath="$PROJECT_DIR$/out/production/Sudoku/Board.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sudoku/Cell.class" afterPath="$PROJECT_DIR$/out/production/Sudoku/Cell.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sudoku/Sudoku.class" afterPath="$PROJECT_DIR$/out/production/Sudoku/Sudoku.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sudoku.java" afterPath="$PROJECT_DIR$/src/Sudoku.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,15 +67,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Sudoku$Sudoku.coverage" NAME="Sudoku Coverage Results" MODIFIED="1521176026862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sudoku$Sudoku.coverage" NAME="Sudoku Coverage Results" MODIFIED="1521179966490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Sudoku.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sudoku.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Sudoku.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="300">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getInputFromTyping#0;class#Sudoku#0" expanded="false" />
@@ -32,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="106" column="9" lean-forward="true" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+            <state relative-caret-position="276">
+              <caret line="113" column="13" lean-forward="true" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Board#0;class#Board#0" expanded="false" />
@@ -48,7 +101,7 @@
                 <element signature="method#onlyOptionSolve#0;class#Board#0" expanded="false" />
                 <element signature="method#groupingSpacesSolve#0;class#Board#0" expanded="false" />
                 <element signature="method#groupingPossibilitiesSolve#0;class#Board#0" expanded="false" />
-                <marker date="1521179502849" expanded="false" signature="4468:4656" ph="{...}" />
+                <marker date="1521179856911" expanded="false" signature="4487:4675" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -106,9 +159,9 @@
         <option value="$PROJECT_DIR$/../../CA Backup/Netbeans_Backup/10th Grade Netbeans Backup/NetBeansProjects/Sudoku1/src/sudoku1/Sudoku1.java" />
         <option value="$PROJECT_DIR$/src/TestBoard.java" />
         <option value="$PROJECT_DIR$/../../CA Backup/Netbeans_Backup/11th Grade Netbeans Backup/Sudoku2/src/sudoku2/Sudoku2.java" />
-        <option value="$PROJECT_DIR$/src/Board.java" />
         <option value="$PROJECT_DIR$/src/Cell.java" />
         <option value="$PROJECT_DIR$/src/Sudoku.java" />
+        <option value="$PROJECT_DIR$/src/Board.java" />
       </list>
     </option>
   </component>
@@ -304,7 +357,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26376146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26376146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -388,7 +441,7 @@
             <element signature="method#onlyOptionSolve#0;class#Board#0" expanded="false" />
             <element signature="method#groupingSpacesSolve#0;class#Board#0" expanded="false" />
             <element signature="method#groupingPossibilitiesSolve#0;class#Board#0" expanded="false" />
-            <marker date="1521179502849" expanded="false" signature="4468:4656" ph="{...}" />
+            <marker date="1521179856911" expanded="false" signature="4487:4675" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -446,7 +499,7 @@
             <element signature="method#onlyOptionSolve#0;class#Board#0" expanded="false" />
             <element signature="method#groupingSpacesSolve#0;class#Board#0" expanded="false" />
             <element signature="method#groupingPossibilitiesSolve#0;class#Board#0" expanded="false" />
-            <marker date="1521179502849" expanded="false" signature="4468:4656" ph="{...}" />
+            <marker date="1521179856911" expanded="false" signature="4487:4675" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -526,22 +579,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sudoku.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInputFromTyping#0;class#Sudoku#0" expanded="false" />
-            <element signature="method#getInputFromFile#0;class#Sudoku#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="106" column="9" lean-forward="true" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+        <state relative-caret-position="276">
+          <caret line="113" column="13" lean-forward="true" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Board#0;class#Board#0" expanded="false" />
@@ -553,7 +594,19 @@
             <element signature="method#onlyOptionSolve#0;class#Board#0" expanded="false" />
             <element signature="method#groupingSpacesSolve#0;class#Board#0" expanded="false" />
             <element signature="method#groupingPossibilitiesSolve#0;class#Board#0" expanded="false" />
-            <marker date="1521179502849" expanded="false" signature="4468:4656" ph="{...}" />
+            <marker date="1521179856911" expanded="false" signature="4487:4675" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sudoku.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getInputFromTyping#0;class#Sudoku#0" expanded="false" />
+            <element signature="method#getInputFromFile#0;class#Sudoku#0" expanded="false" />
           </folding>
         </state>
       </provider>
