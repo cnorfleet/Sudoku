@@ -157,21 +157,6 @@ public class Board
         }
         return false;
     }
-    private boolean AContainsAnyNotInB(ArrayList<Integer> A, ArrayList<Integer> B)
-    {
-        for(int a : A)
-        {
-            boolean found = false;
-            for(int b : B)
-            {
-                if(a == b)
-                { found = true; break; }
-            }
-            if(!found)
-            { return false; }
-        }
-        return true;
-    }
     private boolean contains(ArrayList<Integer> A, int i)
     {
         for(int a : A)

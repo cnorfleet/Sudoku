@@ -114,9 +114,6 @@ public class Cell
     public String getLocationString()
     { return (r + ", " + c); }
 
-    public ArrayList<ArrayList<Cell>> getRegions()
-    { return regions; }
-
     public boolean simpleSolve()
     {
         if(possibilities.size() != 1)

@@ -29,7 +29,7 @@ public class Sudoku
         System.out.println("\n" + count + "/50"); //*/
     }
 
-    public static int[][] getInputFromTyping()
+    private static int[][] getInputFromTyping()
     {
         Scanner scanner = new Scanner(System.in);
         int[][] board = new int[9][9];
@@ -50,7 +50,7 @@ public class Sudoku
         }
         return board;
     }
-    public static int[][] getInputFromFile(String fileName) throws FileNotFoundException
+    private static int[][] getInputFromFile(String fileName) throws FileNotFoundException
     {
         Scanner inputFile = new Scanner(new File(fileName));
         int[][] board = new int[9][9];
