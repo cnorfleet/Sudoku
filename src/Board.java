@@ -5,7 +5,8 @@ public class Board
 {
     private Cell[][] myBoard;
     private ArrayList<ArrayList<Cell>> allRegions;
-    public boolean foundMultSolutions = false;
+    private boolean foundMultSolutions = false;
+    private boolean foundUniqueSolution = false;
 
     public Board(int[][] b)
     {
@@ -87,7 +88,9 @@ public class Board
     {
         String out = "";
         if(foundMultSolutions)
-        { out += "This board has more than one solution.  One solution is:\n"; }
+        { out += "This board has more than one solution.  One solution is:\n\n"; }
+        else if(foundUniqueSolution)
+        { out += "This board has exactly one solution.\n\n"; }
         for (int row = 0; row < 9; row++)
         {
             for (int col = 0; col < 9; col++)
@@ -135,7 +138,7 @@ public class Board
     }
 
     public void solve()
-    { solve(false); }
+    { solve(true); }
     public void solve(boolean lookForMultipleSolutions)
     {
         while(!isSolved())
@@ -148,6 +151,8 @@ public class Board
             //if all else fails...
             bruteForceSolve(lookForMultipleSolutions);
         }
+        if(lookForMultipleSolutions)
+        { foundUniqueSolution = !foundMultSolutions; }
     }
 
     private boolean containAnySame(ArrayList<Integer> A, ArrayList<Integer> B)
@@ -388,7 +393,7 @@ public class Board
         {
             Board newBoard = this.deepClone();
             newBoard.setCellVal(r,c,p);
-            try { newBoard.solve(); }
+            try { newBoard.solve(lookForMultipleSolutions); }
             catch (Exception e) { continue; }
             if(newBoard.isSolved() && newBoard.isValid())
             {
