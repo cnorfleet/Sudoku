@@ -5,6 +5,7 @@ public class Board
 {
     private Cell[][] myBoard;
     private ArrayList<ArrayList<Cell>> allRegions;
+    public boolean foundMultSolutions = false;
 
     public Board(int[][] b)
     {
@@ -85,6 +86,8 @@ public class Board
     public String toString()
     {
         String out = "";
+        if(foundMultSolutions)
+        { out += "This board has more than one solution.  One solution is:\n"; }
         for (int row = 0; row < 9; row++)
         {
             for (int col = 0; col < 9; col++)
@@ -132,6 +135,8 @@ public class Board
     }
 
     public void solve()
+    { solve(false); }
+    public void solve(boolean lookForMultipleSolutions)
     {
         while(!isSolved())
         {
@@ -141,7 +146,7 @@ public class Board
             if(groupingSpacesSolve()) { continue; }
             if(groupingPossibilitiesSolve()) { continue; }
             //if all else fails...
-            bruteForceSolve();
+            bruteForceSolve(lookForMultipleSolutions);
         }
     }
 
@@ -361,7 +366,7 @@ public class Board
         return changed;
     }
     //brute force algorithm
-    private void bruteForceSolve()
+    private void bruteForceSolve(boolean lookForMultipleSolutions)
     {
         //find cell with fewest possibilities
         int min = 10; Cell minCell = null;
@@ -376,6 +381,9 @@ public class Board
         ArrayList<Integer> possibilities = minCell.getPossibilities();
         int r = minCell.getRow();
         int c = minCell.getCol();
+        boolean solved = false;
+        Cell[][] solutionBoard = null;
+        ArrayList<ArrayList<Cell>> solutionRegions = null;
         for(int p : possibilities)
         {
             Board newBoard = this.deepClone();
@@ -384,11 +392,22 @@ public class Board
             catch (Exception e) { continue; }
             if(newBoard.isSolved() && newBoard.isValid())
             {
-                myBoard = newBoard.getBoard();
-                allRegions = newBoard.getAllRegions();
-                return;
+                if(!solved) //we found a solution
+                {
+                    solved = true;
+                    solutionBoard = newBoard.getBoard();
+                    solutionRegions = newBoard.getAllRegions();
+                    foundMultSolutions = foundMultSolutions || newBoard.foundMultSolutions;
+                }
+                else //we found an additional solution
+                { foundMultSolutions = true; }
+                if(!lookForMultipleSolutions || foundMultSolutions)
+                { break; } //we just want to see if there are at least two solutions
             }
         }
-        throw new InputMismatchException("This Board is Invalid");
+        if(!solved)
+        { throw new InputMismatchException("This Board is Invalid"); }
+        myBoard = solutionBoard;
+        allRegions = solutionRegions;
     }
 }

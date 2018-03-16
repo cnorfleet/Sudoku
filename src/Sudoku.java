@@ -5,14 +5,14 @@ public class Sudoku
 {
     public static void main(String[] args) throws FileNotFoundException
     {
-        /*Board b = new Board(getInputFromFile("testBoards/blank.txt"));
+        Board b = new Board(getInputFromFile("testBoards/blank.txt"));
         System.out.print("\n" + b);
         b.solve();
         System.out.println("\n-----------------------------\n-----------------------------");
         System.out.print("\n" + b); //*/
 
         //test code
-        int count = 0;
+        /*int count = 0;
         for (int i = 1; i <= 50; i++)
         {
             Board b = new Board(getInputFromFile("testBoards/" + i + ".txt"));
