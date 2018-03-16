@@ -15,7 +15,7 @@ public class Sudoku
         int count = 0;
         for (int i = 1; i <= 50; i++)
         {
-            Board b = new Board(getInputFromFile("moreTestBoards/" + i + ".txt"));
+            Board b = new Board(getInputFromFile("testBoards/" + i + ".txt"));
             b.solve();
             if (b.isSolved())
             { count++; }
