@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Cell
@@ -111,6 +110,9 @@ public class Cell
     { return (myVal == 0 && possibilities.size() == 0); }
     public String debugLocationString()
     { return (r + ", " + c); }
+
+    public ArrayList<ArrayList<Cell>> getRegions()
+    { return regions; }
 
     public boolean simpleSolve()
     {

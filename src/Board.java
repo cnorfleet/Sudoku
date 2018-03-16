@@ -1,13 +1,12 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Board
 {
     private Cell[][] myBoard;
+    private ArrayList<ArrayList<Cell>> allRegions;
 
     public Board(int[][] b)
-    {
-        initializeBoard(b);
-    }
-
-    private void initializeBoard(int[][] b)
     {
         //create board
         myBoard = new Cell[9][9];
@@ -39,12 +38,45 @@ public class Board
                 }
             }
         }
+
         //initial possibilities update
         for(Cell[] r : myBoard)
         {
             for(Cell c : r)
             {
                 c.updateNeighborsPossibilities();
+            }
+        }
+
+        //set up allRegions
+        allRegions = new ArrayList<>();
+        for(Cell[] r : myBoard) //rows
+        {
+            ArrayList<Cell> row = new ArrayList<>();
+            for(Cell c : r)
+            { row.add(c); }
+            allRegions.add(row);
+        }
+        for(int c = 0; c < 9; c++) //cols
+        {
+            ArrayList<Cell> col = new ArrayList<>();
+            for(int r = 0; r < 9; r++)
+            { col.add(myBoard[r][c]); }
+            allRegions.add(col);
+        }
+        for(int r = 0; r < 3; r++) //boxes
+        {
+            for(int c = 0; c < 3; c++)
+            {
+                ArrayList<Cell> box = new ArrayList<>();
+                for(int r2 = r*3; r2 < (r*3)+3; r2++)
+                {
+                    for (int c2 = c*3; c2 < (c*3)+3; c2++)
+                    {
+                        box.add(myBoard[r2][c2]);
+                    }
+                }
+                allRegions.add(box);
             }
         }
     }
@@ -92,7 +124,7 @@ public class Board
         while(!isSolved()) //could also use while(true), which would reduce time for each loop but require running the loop an extra time
         {
             boolean changed = false;
-            //try simple solve where you look for single possibilities first
+            //simple solve where you look for single possibilities first
             for(Cell[] r : myBoard)
             {
                 for(Cell c : r)
@@ -103,7 +135,7 @@ public class Board
             }
             if(changed) { continue; }
 
-            //next try solve where square is the only square that can be a number in a region
+            //solve where square is the only square that can be a number in a region
             for(Cell[] r : myBoard)
             {
                 for(Cell c : r)
@@ -114,7 +146,10 @@ public class Board
             }
             if(changed) { continue; }
 
-            //try other things to remove possibilities
+            ////other things to remove possibilities:
+            //grouping pairs
+            //grouping trios, n-groups
+
             //else
             break;
         }

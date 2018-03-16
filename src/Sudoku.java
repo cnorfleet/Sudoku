@@ -1,5 +1,4 @@
 import java.io.*;
-import java.nio.file.FileSystemException;
 import java.util.Scanner;
 
 public class Sudoku
