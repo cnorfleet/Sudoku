@@ -107,10 +107,10 @@ public class Board
         {
             for(Cell c : r)
             {
+                if(c.getVal() == 0 && c.getPossibilities().size() == 0)
+                { throw new NullPointerException("Cell at " + c.getLocationString() + " doesn't have any possibilities"); }
                 if(c.getVal() == 0)
                 { return false; }
-                if(c.getPossibilities().size() == 0)
-                { throw new NullPointerException("Cell at " + c.getLocationString() + " doesn't have any possibilities"); }
             }
         }
         return true;
