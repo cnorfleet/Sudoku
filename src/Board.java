@@ -5,8 +5,8 @@ public class Board
 {
     private Cell[][] myBoard;
     private ArrayList<ArrayList<Cell>> allRegions;
-    public boolean foundMultSolutions = false;
-    public boolean foundUniqueSolution = false;
+    boolean foundMultSolutions;
+    boolean foundUniqueSolution;
 
     public Board(int[][] b)
     {
@@ -81,6 +81,9 @@ public class Board
                 allRegions.add(box);
             }
         }
+
+        foundMultSolutions = false;
+        foundUniqueSolution = false;
     }
 
     @Override
