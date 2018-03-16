@@ -109,6 +109,20 @@ public class Board
         }
         return out;
     }
+    public boolean equals(Board b)
+    {
+        int[][] A = this.getBoardIntArray();
+        int[][] B = b.getBoardIntArray();
+        for(int r = 0; r < 9; r++)
+        {
+            for(int c = 0; c < 9; c++)
+            {
+                if(A[r][c] != B[r][c])
+                { return false; }
+            }
+        }
+        return true;
+    }
 
     public boolean isSolved()
     {
@@ -180,20 +194,20 @@ public class Board
     public void setCellVal(int r, int c, int val)
     { myBoard[r][c].setVal(val); }
 
-    public Board deepClone()
+    public Cell[][] getBoard()
+    { return myBoard; }
+    public int[][] getBoardIntArray()
     {
-        //make integer array from board
         int[][] a = new int[9][9];
         for(int r = 0; r < 9; r++)
         {
             for(int c = 0; c < 9; c++)
             { a[r][c] = myBoard[r][c].getVal(); }
         }
-        //make new board
-        return new Board(a);
+        return a;
     }
-    public Cell[][] getBoard()
-    { return myBoard; }
+    public Board deepClone()
+    { return new Board(getBoardIntArray()); }
     public ArrayList<ArrayList<Cell>> getAllRegions()
     { return allRegions; }
 
