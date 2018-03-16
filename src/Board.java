@@ -120,101 +120,12 @@ public class Board
 
     public void solve()
     {
-        while(!isSolved()) //could also use while(true), which would reduce time for each loop but require running the loop an extra time
+        while(!isSolved()) //could also use while(true)
         {
-            boolean changed = false;
-            //simple solve where you look for single possibilities first
-            for(Cell[] r : myBoard)
-            {
-                for(Cell c : r)
-                {
-                    if(c.getVal() == 0)
-                    { changed = c.simpleSolve() || changed; }
-                }
-            }
-            if(changed) { continue; }
-
-            //solve where square is the only square that can be a number in a region
-            for(Cell[] r : myBoard)
-            {
-                for(Cell c : r)
-                {
-                    if(c.getVal() == 0)
-                    { changed = c.onlyOptionSolve() || changed; }
-                }
-            }
-            if(changed) { continue; }
-
-            ////other things to remove possibilities:
-            //grouping pairs, trios, n-groups of spaces which only have n-groups of possibilities
-
-            //grouping pairs, trios, n-groups of possibilities which are only fulfilled by n-groups of spaces
-            for(ArrayList<Cell> region : allRegions)
-            {
-                //get possibilities in region
-                ArrayList<Integer> p = new ArrayList<>();
-                for(int i = 1; i <= 9; i++)
-                {
-                    for(Cell c : region)
-                    {
-                        if (c.hasPossibility(i))
-                        { p.add(i); break; }
-                    }
-                }
-                //create permutations of possibilities of size > 1
-                ArrayList<ArrayList<Integer>> permutations = new ArrayList<>();
-                for(int i = 0; i < p.size(); i++)
-                {
-                    ArrayList<ArrayList<Integer>> permutationsC = (ArrayList<ArrayList<Integer>>) permutations.clone();
-                    for(ArrayList<Integer> a : permutationsC)
-                    {
-                        ArrayList<Integer> temp = (ArrayList<Integer>) a.clone();
-                        temp.add(p.get(i));
-                        permutations.add(temp);
-                    }
-                    for(int j = 0; j < i; j++)
-                    {
-                        ArrayList<Integer> temp = new ArrayList<>();
-                        temp.add(p.get(j));
-                        temp.add(p.get(i));
-                        if (temp.size() != p.size())
-                        { permutations.add(temp); }
-                    }
-                }
-                //look for n-groups of spaces which correspond in size to n-group permutations
-                for(ArrayList<Integer> permutation : permutations)
-                {
-                    //check each n-group
-                    ArrayList<Cell> matching = new ArrayList<>();
-                    for(Cell c : region)
-                    {
-                        if(c.getVal() != 0 || !containAnySame(c.getPossibilities(), permutation))
-                        { continue; }
-                        matching.add(c);
-                    }
-                    //if we only have exactly the right number of squares, then they must all be in the permutation
-                    if(matching.size() <= permutation.size())
-                    {
-                        changed = true;
-                        //figure out what other things the squares must not be
-                        ArrayList<Integer> toRemove = new ArrayList<>();
-                        for(int i : p)
-                        {
-                            if(!contains(permutation, i))
-                            { toRemove.add(i); }
-                        }
-                        //remove those things
-                        for(Cell c : matching)
-                        {
-                            for(int r : toRemove)
-                            { c.removePossibility(r); }
-                        }
-                    }
-                }
-            }
-            if(changed) { continue; }
-
-            //else
+            if(simpleSolve()) { continue; }
+            if(onlyOptionSolve()) { continue; }
+            if(groupingSpacesSolve()) { continue; }
+            if(groupingPossibilitiesSolve()) { continue; }
             break;
         }
     }
@@ -251,5 +162,112 @@ public class Board
         for(int a : A)
         { if (i == a) { return true; } }
         return false;
+    }
+
+    //simple solve where you look for single possibilities first
+    private boolean simpleSolve()
+    {
+        boolean changed = false;
+        for(Cell[] r : myBoard)
+        {
+            for(Cell c : r)
+            {
+                if(c.getVal() == 0)
+                { changed = c.simpleSolve() || changed; }
+            }
+        }
+        return changed;
+    }
+    //solve where square is the only square that can be a number in a region
+    private boolean onlyOptionSolve()
+    {
+        boolean changed = false;
+        for(Cell[] r : myBoard)
+        {
+            for(Cell c : r)
+            {
+                if(c.getVal() == 0)
+                { changed = c.onlyOptionSolve() || changed; }
+            }
+        }
+        return changed;
+    }
+    ////other things to remove possibilities:
+    //grouping pairs, trios, n-groups of spaces which only have n-groups of possibilities
+    private boolean groupingSpacesSolve()
+    {
+        return false;
+    }
+    //grouping pairs, trios, n-groups of possibilities which are only fulfilled by n-groups of spaces
+    private boolean groupingPossibilitiesSolve()
+    {
+        boolean changed = false;
+        for(ArrayList<Cell> region : allRegions)
+        {
+            //get possibilities in region
+            ArrayList<Integer> p = new ArrayList<>();
+            for(int i = 1; i <= 9; i++)
+            {
+                for(Cell c : region)
+                {
+                    if (c.hasPossibility(i))
+                    { p.add(i); break; }
+                }
+            }
+            //create permutations of possibilities of size > 1
+            ArrayList<ArrayList<Integer>> permutations = new ArrayList<>();
+            for(int i = 0; i < p.size(); i++)
+            {
+                ArrayList<ArrayList<Integer>> permutationsC = (ArrayList<ArrayList<Integer>>) permutations.clone();
+                for(ArrayList<Integer> a : permutationsC)
+                {
+                    ArrayList<Integer> temp = (ArrayList<Integer>) a.clone();
+                    temp.add(p.get(i));
+                    permutations.add(temp);
+                }
+                for(int j = 0; j < i; j++)
+                {
+                    ArrayList<Integer> temp = new ArrayList<>();
+                    temp.add(p.get(j));
+                    temp.add(p.get(i));
+                    if (temp.size() != p.size())
+                    { permutations.add(temp); }
+                }
+            }
+            //look for n-groups of spaces which correspond in size to n-group permutations
+            for(ArrayList<Integer> permutation : permutations)
+            {
+                //check each n-group
+                ArrayList<Cell> matching = new ArrayList<>();
+                for(Cell c : region)
+                {
+                    if(c.getVal() != 0 || !containAnySame(c.getPossibilities(), permutation))
+                    { continue; }
+                    matching.add(c);
+                }
+                //if we only have exactly the right number of squares, then they must all be in the permutation
+                if(matching.size() <= permutation.size())
+                {
+                    //figure out what other things the squares must not be
+                    ArrayList<Integer> toRemove = new ArrayList<>();
+                    for(int i : p)
+                    {
+                        if(!contains(permutation, i))
+                        { toRemove.add(i); }
+                    }
+                    //remove those things
+                    for(Cell c : matching)
+                    {
+                        for(int r : toRemove)
+                        {
+                            if(c.containsPossibility(r))
+                            { changed = true; }
+                            c.removePossibility(r);
+                        }
+                    }
+                }
+            }
+        }
+        return changed;
     }
 }

@@ -48,6 +48,15 @@ public class Cell
     }
     public void removePossibility(int i)
     { possibilities.remove(new Integer(i)); }
+    public boolean containsPossibility(int i)
+    {
+        for(int p : possibilities)
+        {
+            if(i == p)
+            { return true; }
+        }
+        return false;
+    }
     public void clearPossibilities()
     {
         while(possibilities.size() > 0)
