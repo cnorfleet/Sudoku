@@ -101,9 +101,6 @@ public class Board
         return out;
     }
 
-    public Cell debugGetCell(int r, int c)
-    { return myBoard[r][c]; }
-
     public boolean isSolved()
     {
         for(Cell[] r : myBoard)

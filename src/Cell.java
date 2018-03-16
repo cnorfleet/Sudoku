@@ -111,29 +111,6 @@ public class Cell
     public ArrayList<Integer> getPossibilities()
     { return possibilities; }
 
-    public void debugPrintNeighbors()
-    {
-        for(Cell c : neighbors)
-        { System.out.print(c + " "); }
-        System.out.println();
-        for(Cell c : row)
-        { System.out.print(c + " "); }
-        System.out.println();
-        for(Cell c : col)
-        { System.out.print(c + " "); }
-        System.out.println();
-        for(Cell c : box)
-        { System.out.print(c + " "); }
-        System.out.println();
-    }
-    public void debugPrintPossibilities()
-    {
-        for(Integer p : possibilities)
-        { System.out.print(p + " "); }
-        System.out.println();
-    }
-    public boolean debugNoPossibilities()
-    { return (myVal == 0 && possibilities.size() == 0); }
     public String getLocationString()
     { return (r + ", " + c); }
 

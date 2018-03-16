@@ -10,7 +10,7 @@ public class Sudoku
         b.solve();
         System.out.println("\n-----------------------------\n-----------------------------");
         System.out.print("\n" + b); //*/
-        
+
         //test code
         int count = 0;
         for (int i = 1; i <= 50; i++)
