@@ -5,7 +5,7 @@ public class Sudoku
 {
     public static void main(String[] args) throws FileNotFoundException
     {
-        /*Board b = new TestBoard(4);
+        /*Board b = new Board(getInputFromFile("board.txt"));
         System.out.print("\n" + b);
         b.solve();
         System.out.println("\n-----------------------------\n-----------------------------");
