@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="608a7456-3f35-4070-afca-f17d1e2db3b0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sudoku/Board.class" afterPath="$PROJECT_DIR$/out/production/Sudoku/Board.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board.java" afterPath="$PROJECT_DIR$/src/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cell.java" afterPath="$PROJECT_DIR$/src/Cell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sudoku.java" afterPath="$PROJECT_DIR$/src/Sudoku.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +33,8 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="123" column="9" lean-forward="true" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
+            <state relative-caret-position="425">
+              <caret line="196" column="41" lean-forward="true" selection-start-line="196" selection-start-column="41" selection-end-line="196" selection-end-column="41" />
               <folding>
                 <element signature="method#Board#0;class#Board#0" expanded="false" />
                 <element signature="method#toString#0;class#Board#0" expanded="false" />
@@ -43,10 +43,9 @@
                 <element signature="method#contains#0;class#Board#0" expanded="false" />
                 <element signature="method#simpleSolve#0;class#Board#0" expanded="false" />
                 <element signature="method#onlyOptionSolve#0;class#Board#0" expanded="false" />
-                <element signature="e#5712#5713#0" expanded="true" />
-                <element signature="e#5740#5741#0" expanded="true" />
+                <element signature="method#groupingSpacesSolve#0;class#Board#0" expanded="false" />
                 <element signature="method#groupingPossibilitiesSolve#0;class#Board#0" expanded="false" />
-                <marker date="1521171698946" expanded="false" signature="4054:4242" ph="{...}" />
+                <marker date="1521173242671" expanded="false" signature="4054:4242" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -307,7 +306,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20298165" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20298165" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -391,10 +390,9 @@
             <element signature="method#contains#0;class#Board#0" expanded="false" />
             <element signature="method#simpleSolve#0;class#Board#0" expanded="false" />
             <element signature="method#onlyOptionSolve#0;class#Board#0" expanded="false" />
-            <element signature="e#5712#5713#0" expanded="true" />
-            <element signature="e#5740#5741#0" expanded="true" />
+            <element signature="method#groupingSpacesSolve#0;class#Board#0" expanded="false" />
             <element signature="method#groupingPossibilitiesSolve#0;class#Board#0" expanded="false" />
-            <marker date="1521171698946" expanded="false" signature="4054:4242" ph="{...}" />
+            <marker date="1521173242671" expanded="false" signature="4054:4242" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -453,10 +451,9 @@
             <element signature="method#contains#0;class#Board#0" expanded="false" />
             <element signature="method#simpleSolve#0;class#Board#0" expanded="false" />
             <element signature="method#onlyOptionSolve#0;class#Board#0" expanded="false" />
-            <element signature="e#5712#5713#0" expanded="true" />
-            <element signature="e#5740#5741#0" expanded="true" />
+            <element signature="method#groupingSpacesSolve#0;class#Board#0" expanded="false" />
             <element signature="method#groupingPossibilitiesSolve#0;class#Board#0" expanded="false" />
-            <marker date="1521171698946" expanded="false" signature="4054:4242" ph="{...}" />
+            <marker date="1521173242671" expanded="false" signature="4054:4242" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -545,8 +542,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="123" column="9" lean-forward="true" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
+        <state relative-caret-position="425">
+          <caret line="196" column="41" lean-forward="true" selection-start-line="196" selection-start-column="41" selection-end-line="196" selection-end-column="41" />
           <folding>
             <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#toString#0;class#Board#0" expanded="false" />
@@ -555,10 +552,9 @@
             <element signature="method#contains#0;class#Board#0" expanded="false" />
             <element signature="method#simpleSolve#0;class#Board#0" expanded="false" />
             <element signature="method#onlyOptionSolve#0;class#Board#0" expanded="false" />
-            <element signature="e#5712#5713#0" expanded="true" />
-            <element signature="e#5740#5741#0" expanded="true" />
+            <element signature="method#groupingSpacesSolve#0;class#Board#0" expanded="false" />
             <element signature="method#groupingPossibilitiesSolve#0;class#Board#0" expanded="false" />
-            <marker date="1521171698946" expanded="false" signature="4054:4242" ph="{...}" />
+            <marker date="1521173242671" expanded="false" signature="4054:4242" ph="{...}" />
           </folding>
         </state>
       </provider>

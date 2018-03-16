@@ -196,7 +196,73 @@ public class Board
     //grouping pairs, trios, n-groups of spaces which only have n-groups of possibilities
     private boolean groupingSpacesSolve()
     {
-        return false;
+        boolean changed = false;
+        for(ArrayList<Cell> region : allRegions)
+        {
+            //get unsolved cells in regions
+            ArrayList<Cell> cells = new ArrayList<>();
+            for (Cell c : region)
+            {
+                if(c.getVal() == 0)
+                { cells.add(c); }
+            }
+            //create permutations of cells with size > 1
+            ArrayList<ArrayList<Cell>> permutations = new ArrayList<>();
+            for(int i = 0; i < cells.size(); i++)
+            {
+                ArrayList<ArrayList<Cell>> permutationsC = (ArrayList<ArrayList<Cell>>) permutations.clone();
+                for(ArrayList<Cell> a : permutationsC)
+                {
+                    ArrayList<Cell> temp = (ArrayList<Cell>) a.clone();
+                    temp.add(cells.get(i));
+                    permutations.add(temp);
+                }
+                for(int j = 0; j < i; j++)
+                {
+                    ArrayList<Cell> temp = new ArrayList<>();
+                    temp.add(cells.get(j));
+                    temp.add(cells.get(i));
+                    if (temp.size() != cells.size())
+                    { permutations.add(temp); }
+                }
+            }
+            //look for n-groups of permutations which correspond in size to n-group cells
+            for(ArrayList<Cell> permutation : permutations)
+            {
+                //check each n-group
+                ArrayList<Integer> allPos = new ArrayList<>();
+                for (Cell c : permutation)
+                {
+                    for(Integer p : c.getPossibilities())
+                    {
+                        if(!contains(allPos, p))
+                        { allPos.add(p); }
+                    }
+                }
+                //if we only have exactly the right number of possibilities, then only these squares can be the possibilities
+                if(allPos.size() <= permutation.size())
+                {
+                    //figure out what other squares we have in this region
+                    ArrayList<Cell> toRemoveFrom = new ArrayList<>();
+                    for(Cell c : cells)
+                    {
+                        if(!permutation.contains(c))
+                        { toRemoveFrom.add(c); }
+                    }
+                    //remove these possibilities from the other squares
+                    for(Cell c : toRemoveFrom)
+                    {
+                        for(int r : allPos)
+                        {
+                            if(c.containsPossibility(r))
+                            { changed = true; }
+                            c.removePossibility(r);
+                        }
+                    }
+                }
+            }
+        }
+        return changed;
     }
     //grouping pairs, trios, n-groups of possibilities which are only fulfilled by n-groups of spaces
     private boolean groupingPossibilitiesSolve()
@@ -214,7 +280,7 @@ public class Board
                     { p.add(i); break; }
                 }
             }
-            //create permutations of possibilities of size > 1
+            //create permutations of possibilities with size > 1
             ArrayList<ArrayList<Integer>> permutations = new ArrayList<>();
             for(int i = 0; i < p.size(); i++)
             {
