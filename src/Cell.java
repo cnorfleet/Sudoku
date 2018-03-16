@@ -47,7 +47,11 @@ public class Cell
         { n.removePossibility(myVal); }
     }
     public void removePossibility(int i)
-    { possibilities.remove(new Integer(i)); }
+    {
+        possibilities.remove(new Integer(i));
+        if(myVal == 0 && possibilities.size() == 0)
+        { throw new NullPointerException("No More Possibilities Left"); }
+    }
     public boolean containsPossibility(int i)
     {
         for(int p : possibilities)
@@ -65,6 +69,17 @@ public class Cell
 
     public int getVal()
     { return myVal; }
+    public int getRow()
+    { return r; }
+    public int getCol()
+    { return c; }
+    public void setVal(int val)
+    {
+        if(val == 0) { throw new IllegalArgumentException("Please Don't Set Me to Zero"); }
+        myVal = val;
+        updateNeighborsPossibilities();
+        clearPossibilities();
+    }
 
     @Override
     public String toString()

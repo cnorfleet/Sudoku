@@ -118,16 +118,33 @@ public class Board
         }
         return true;
     }
+    public boolean isValid()
+    {
+        for(ArrayList<Cell> region : allRegions)
+        {
+            for(Cell c : region)
+            {
+                for(Cell c2 : region)
+                {
+                    if (c.getVal() != 0 && c != c2 && c.getVal() == c2.getVal())
+                    { return false; }
+                }
+            }
+        }
+        return true;
+    }
 
     public void solve()
     {
-        while(!isSolved()) //could also use while(true)
+        while(!isSolved())
         {
+            if(!isValid()) { break; }
             if(simpleSolve()) { continue; }
             if(onlyOptionSolve()) { continue; }
             if(groupingSpacesSolve()) { continue; }
             if(groupingPossibilitiesSolve()) { continue; }
-            break;
+            //if all else fails...
+            bruteForceSolve();
         }
     }
 
@@ -164,6 +181,26 @@ public class Board
         { if (i == a) { return true; } }
         return false;
     }
+
+    public void setCellVal(int r, int c, int val)
+    { myBoard[r][c].setVal(val); }
+
+    public Board deepClone()
+    {
+        //make integer array from board
+        int[][] a = new int[9][9];
+        for(int r = 0; r < 9; r++)
+        {
+            for(int c = 0; c < 9; c++)
+            { a[r][c] = myBoard[r][c].getVal(); }
+        }
+        //make new board
+        return new Board(a);
+    }
+    public Cell[][] getBoard()
+    { return myBoard; }
+    public ArrayList<ArrayList<Cell>> getAllRegions()
+    { return allRegions; }
 
     //simple solve where you look for single possibilities first
     private boolean simpleSolve()
@@ -340,5 +377,36 @@ public class Board
             }
         }
         return changed;
+    }
+    //brute force algorithm
+    private void bruteForceSolve()
+    {
+        //find cell with fewest possibilities
+        int min = 10; Cell minCell = null;
+        for(Cell[] r : myBoard)
+        {
+            for(Cell c : r)
+            {
+                if(c.getVal() == 0 && c.getPossibilities().size() < min)
+                { minCell = c; min = c.getPossibilities().size(); }
+            }
+        }
+        ArrayList<Integer> possibilities = minCell.getPossibilities();
+        int r = minCell.getRow();
+        int c = minCell.getCol();
+        for(int p : possibilities)
+        {
+            Board newBoard = this.deepClone();
+            newBoard.setCellVal(r,c,p);
+            try { newBoard.solve(); }
+            catch (Exception e) { continue; }
+            if(newBoard.isSolved() && newBoard.isValid())
+            {
+                myBoard = newBoard.getBoard();
+                allRegions = newBoard.getAllRegions();
+                return;
+            }
+        }
+        throw new InputMismatchException("This Board is Not Invalid");
     }
 }
