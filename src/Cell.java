@@ -134,7 +134,7 @@ public class Cell
     }
     public boolean debugNoPossibilities()
     { return (myVal == 0 && possibilities.size() == 0); }
-    public String debugLocationString()
+    public String getLocationString()
     { return (r + ", " + c); }
 
     public ArrayList<ArrayList<Cell>> getRegions()

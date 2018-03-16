@@ -112,8 +112,8 @@ public class Board
             {
                 if(c.getVal() == 0)
                 { return false; }
-                if(c.debugNoPossibilities())
-                { throw new NullPointerException("Cell at " + c.debugLocationString() + " doesn't have any possibilities"); }
+                if(c.getPossibilities().size() == 0)
+                { throw new NullPointerException("Cell at " + c.getLocationString() + " doesn't have any possibilities"); }
             }
         }
         return true;
