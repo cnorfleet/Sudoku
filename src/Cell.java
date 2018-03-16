@@ -84,6 +84,8 @@ public class Cell
         { if (i == p) { return true; } }
         return false;
     }
+    public ArrayList<Integer> getPossibilities()
+    { return possibilities; }
 
     public void debugPrintNeighbors()
     {
