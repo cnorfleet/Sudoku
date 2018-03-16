@@ -5,8 +5,8 @@ public class Board
 {
     private Cell[][] myBoard;
     private ArrayList<ArrayList<Cell>> allRegions;
-    private boolean foundMultSolutions = false;
-    private boolean foundUniqueSolution = false;
+    public boolean foundMultSolutions = false;
+    public boolean foundUniqueSolution = false;
 
     public Board(int[][] b)
     {
